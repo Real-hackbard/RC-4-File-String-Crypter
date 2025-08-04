@@ -1,5 +1,13 @@
 # RC-4-File-String-Crypter:
 
+```
+Compiler    : Delphi10 Seattle, 10.1 Berlin, 10.2 Tokyo, 10.3 Rio, 10.4 Sydney, 11 Alexandria, 12 Athens
+Components  : RC4.pas
+Discription : Rivest Cipher4 Crypter for Executables and Strings
+Last Update : 08/2025
+License     : Freeware
+```
+
 RC4 is a stream cipher and variable-length key algorithm. This algorithm encrypts one byte at a time (or larger units at a time). A key input is a pseudorandom bit generator that produces a stream 8-bit number that is unpredictable without knowledge of the input key, The output of the generator is called key-stream, and is combined one byte at a time with the plaintext stream cipher using X-OR operation.
 
 
