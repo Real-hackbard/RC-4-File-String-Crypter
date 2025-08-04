@@ -83,6 +83,7 @@ Pseudo Random Generation Algorithm (Stream Generation)
 Once the vector S is initialized, the input key will not be used. In this step, for each S[i] algorithm swap it with another byte in S according to a scheme dictated by the current configuration of S. After reaching S[255] the process continues, starting from S[0] again 
 
 ```
+// JavaScript
 i, j = 0;
 while (true) {
     i = (i + 1) mod 256;
