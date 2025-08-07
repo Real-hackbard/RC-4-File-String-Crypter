@@ -1,6 +1,6 @@
 # RC-4-File-String-Crypter:
 
-```
+```ruby
 Compiler    : Delphi10 Seattle, 10.1 Berlin, 10.2 Tokyo, 10.3 Rio, 10.4 Sydney, 11 Alexandria, 12 Athens
 Components  : RC4.pas
 Discription : Rivest Cipher4 Crypter for Executables and Strings
@@ -16,12 +16,12 @@ RC4 is a stream cipher and variable-length key algorithm. This algorithm encrypt
 
 
 
-Example:
+## Example:
 
-RC4 Encryption
+### RC4 Encryption
 >10011000 ? 01010000 = 11001000
 
-RC4 Decryption
+### RC4 Decryption
 >11001000 ? 01010000 = 10011000
 
 Key-Generation Algorithm
@@ -32,7 +32,7 @@ Initialization:
 
 The entries of S are set equal to the values from 0 to 255 in ascending order, and a temporary vector T, is created. If the length of the key k is 256 bytes, then k is assigned to T. Otherwise, for a key with length (k-len) bytes, the first k-len elements of T as copied from K, and then K is repeated as many times as necessary to fill T. The idea is illustrated as follows:
 
-```
+```ruby
 // Initialize S with values from 0 to 255
  for i = 0 to 255 do
  S[i] = i;
@@ -41,7 +41,7 @@ The entries of S are set equal to the values from 0 to 255 in ascending order, a
 
 We use T to produce the initial permutation of S. Starting with S[0] to S[255], and for each S[i] algorithm swap it with another byte in S according to a scheme dictated by T[i], but S will still contain values from 0 to 255 : 
 
-```
+```ruby
 // C++
 int j = 0;
 for (int i = 0; i <= 255; i++) {
@@ -50,7 +50,7 @@ for (int i = 0; i <= 255; i++) {
 }
 ```
 
-```
+```ruby
 // Java
 j = 0;
 for
@@ -61,7 +61,7 @@ for
     }
 ```
 
-```
+```ruby
 // Python
 j = 0
 for i in range(256):
@@ -69,7 +69,7 @@ for i in range(256):
     S[i], S[j] = S[j], S[i]  # Swap S[i] and S[j]
 ```
 
-```
+```ruby
 // C#
 for (int i = 0; i < 256; i++) {
 j = (j + S[i] + T[i]) % 256;
@@ -79,7 +79,7 @@ S[j] = temp;
 }
 ```
 
-```
+```ruby
 // JavaScript
 let j = 0;
 for (let i = 0; i <= 255; i++) {
@@ -91,7 +91,7 @@ for (let i = 0; i <= 255; i++) {
 Pseudo Random Generation Algorithm (Stream Generation)
 Once the vector S is initialized, the input key will not be used. In this step, for each S[i] algorithm swap it with another byte in S according to a scheme dictated by the current configuration of S. After reaching S[255] the process continues, starting from S[0] again 
 
-```
+```ruby
 i, j = 0;
 while (true) {
     i = (i + 1) mod 256;
